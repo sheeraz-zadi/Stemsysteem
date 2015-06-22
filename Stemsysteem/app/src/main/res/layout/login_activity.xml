@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/s">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:weightSum="1">
+
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#F57811"
+        android:textSize="40dp"
+        android:text="Stemsysteem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameEditText"
+        android:inputType="textEmailAddress"
+        android:hint="E-Mail"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordEditText"
+        android:hint="Wachtwoord"
+        android:inputType="textPassword"
+        android:layout_gravity="center"
+        android:layout_below="@+id/usernameEditText"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+
+            android:id="@+id/loginButton"
+            android:layout_marginTop="30dp"
+            android:text="INLOGGEN"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:layout_weight="50"
+            android:background="@drawable/buttonshape"
+            android:layout_marginBottom="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+        </LinearLayout>
+     </LinearLayout>
+    </ScrollView>

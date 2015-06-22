@@ -9,7 +9,44 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:textStyle="bold"
+        android:textColor="#F57811"
+        android:textSize="40dp"
+        android:text="Stemsysteem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+
+        android:text="INLOGGEN"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:layout_marginBottom="141dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/registerButton"
+
+        android:text="AANMELDEN"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:layout_marginBottom="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

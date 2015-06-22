@@ -1,9 +1,14 @@
 package com.example.stemsysteem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.parse.Parse;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +17,33 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "irzDix9ljPYtHQr9yh1wDwfnJZgBFnmzIuQAqLpq", "2LMlvc7xK9TxEPch1XlnEdgOvoA8M7QnQUldFvFO");
+
+        // Login onClick
+        final Button bLogin = (Button) findViewById(R.id.loginButton);
+        bLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
+        // SignUp onClick
+        final Button bRegister = (Button) findViewById(R.id.registerButton);
+        bRegister.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            }
+        });
+
+    }
+
+    public void onBackPressed() {
+        //do nothing
     }
 
 
