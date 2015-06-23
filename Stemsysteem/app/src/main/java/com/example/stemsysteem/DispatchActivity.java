@@ -14,7 +14,6 @@ public class DispatchActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Check if there is current user info
         if (ParseUser.getCurrentUser() != null) {
             startActivity(new Intent(this, MainActivity.class));

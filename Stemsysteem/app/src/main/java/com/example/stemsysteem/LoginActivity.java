@@ -19,7 +19,7 @@ import com.parse.ParseUser;
  */
 public class LoginActivity extends Activity {
 
-    private EditText usernameView;
+    private EditText emailView;
     private EditText passwordView;
 
 
@@ -29,11 +29,11 @@ public class LoginActivity extends Activity {
             setContentView(R.layout.login_activity);
 
             // Set up the login form.
-            usernameView = (EditText) findViewById(R.id.usernameEditText);
+            emailView = (EditText) findViewById(R.id.emailEditText);
             passwordView = (EditText) findViewById(R.id.passwordEditText);
 
-            usernameView.setText("test@test.nl");
-            passwordView.setText("test");
+            emailView.setText("test@mailinator.com");
+            passwordView.setText("123456");
 
             // Set up the submit button onClick
             findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
@@ -42,9 +42,9 @@ public class LoginActivity extends Activity {
                     // Validate the SignUp form
                     boolean validationError = false;
 
-                    if (isEmpty(usernameView)) {
+                    if (isEmpty(emailView)) {
                         validationError = true;
-                        usernameView.setError("Please fill in your username");
+                        emailView.setError("Please fill in your username");
                     }
                     if (isEmpty(passwordView)) {
                         validationError = true;
@@ -63,7 +63,7 @@ public class LoginActivity extends Activity {
                     dlg.show();
 
                     // Call the Parse SignUp method
-                    ParseUser.logInInBackground(usernameView.getText().toString().toLowerCase(), passwordView.getText().toString(), new LogInCallback() {
+                    ParseUser.logInInBackground(emailView.getText().toString().toLowerCase(), passwordView.getText().toString(), new LogInCallback() {
 
                         @Override
                         public void done(ParseUser parseUser, ParseException e) {
@@ -73,7 +73,7 @@ public class LoginActivity extends Activity {
                                 Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                             } else {
                                 // Start an intent for the dispatch activity
-                                saveSharedPreference(usernameView);
+                                saveSharedPreference(emailView);
 
                                 Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -88,18 +88,18 @@ public class LoginActivity extends Activity {
             });
         }
 
-        private boolean isEmpty(EditText usernameView) {
-            if (usernameView.getText().toString().trim().length() > 0) {
+        private boolean isEmpty(EditText emailView) {
+            if (emailView.getText().toString().trim().length() > 0) {
                 return false;
             }
             else{
                 return true;
             }
         }
-        public void saveSharedPreference(EditText usernameView){
+        public void saveSharedPreference(EditText emailView){
             SharedPreferences myPrefs = LoginActivity.this.getSharedPreferences("com.example.app", Context.MODE_PRIVATE);
             SharedPreferences.Editor e = myPrefs.edit();
-            e.putString("cUsername", usernameView.getText().toString());
+            e.putString("cEmail", emailView.getText().toString());
             e.commit();
         }
 
